@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import CustomButton from "../../../components/CustomButton";
-import CustomSide from "../../../components/CustomSide";
+import CustomSide from "../CustomSide";
 import CustomFormInput from "./CustomFormInput";
 
 const Container = styled.div`

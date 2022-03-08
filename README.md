@@ -18,11 +18,7 @@ I'm more into React Native because an actual useful project in React also needs 
 
 [ ] - Back button for Sides
 
-[ ] - Fix closing/opening animation for Sides
-
 [ ] - Clicking on Fav button in a product in Products Page, also opens the product page. (overlap)
-
-[ ] - Change color and remove underline for links
 
 [ ] - Fix UI bug before images getting rendered/loaded.
 

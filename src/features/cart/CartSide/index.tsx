@@ -1,7 +1,7 @@
 import { MutatingDots } from "react-loader-spinner";
 import styled from "styled-components";
 import CartProductCard from "./CartProductCard";
-import CustomSide from "../../../components/CustomSide";
+import CustomSide from "../../side/CustomSide";
 import { useSelector } from "react-redux";
 import { selectAllCartItems } from "../cartSlice";
 import CartItem from "../types/CartItem";

@@ -5,7 +5,7 @@ import AddAddress from "./AddAddress";
 import { selectUser } from "../userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import colors from "../../../values/colors";
-import CustomSide from "../../../components/CustomSide";
+import CustomSide from "../../side/CustomSide";
 import strings from "../../../values/strings";
 import CustomButton from "../../../components/CustomButton";
 import { useEffect } from "react";

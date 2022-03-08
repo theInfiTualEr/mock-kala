@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import SideHeaderIcon from "../icons/side-header.svg";
-import { sideChanged } from "../features/side/sideSlice";
+import SideHeaderIcon from "../../icons/side-header.svg";
+import { sideChanged } from "./sideSlice";
 
 const MaskPage = styled(animated.div)`
   position: absolute;
@@ -15,12 +15,25 @@ const MaskPage = styled(animated.div)`
   background-color: black;
 `;
 
-const Container = styled(animated.aside)`
-  overflow: scroll;
+const ContainerFramer = styled.div`
+  overflow: hidden;
   position: absolute;
   z-index: 2;
   right: 0;
   top: 0;
+  left: auto;
+  bottom: 0;
+`;
+
+const Container = styled(animated.aside)`
+  overflow: scroll;
+  position: relative;
+  /* position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0; */
+  height: 100%;
+  width: 400px;
   background-image: url(${SideHeaderIcon});
   background-repeat: no-repeat;
   background-color: white;
@@ -42,8 +55,8 @@ const CustomSide: React.FC<Props> = ({ title, children }) => {
 
   const [shouldClose, setShouldClose] = useState(false);
   const sideStyles = useSpring({
-    from: { width: shouldClose ? "400px" : "0px" },
-    to: { width: shouldClose ? "0px" : "400px" },
+    from: { right: shouldClose ? "0px" : "-400px" },
+    to: { right: shouldClose ? "-400px" : "0px" },
     onRest: () => {
       if (shouldClose) {
         dispatch(sideChanged(null));
@@ -63,10 +76,12 @@ const CustomSide: React.FC<Props> = ({ title, children }) => {
   return (
     <>
       <MaskPage onClick={closeSide} style={{ opacity: maskStyles.opacity }} />
-      <Container style={{ width: sideStyles.width }}>
-        <Title>{title}</Title>
-        {children}
-      </Container>
+      <ContainerFramer>
+        <Container style={{ right: sideStyles.right }}>
+          <Title>{title}</Title>
+          {children}
+        </Container>
+      </ContainerFramer>
     </>
   );
 };

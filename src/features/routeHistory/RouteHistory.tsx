@@ -24,7 +24,7 @@ function renderRouteHistory(
     let route = routeHistory[i];
 
     if (routeHistory[i - 1] === "Product") {
-      const product = productEntities[routeHistory[routeHistory.length - 1]];
+      const product = productEntities[routeHistory[i]];
       if (product !== undefined) route = product.title;
     }
 

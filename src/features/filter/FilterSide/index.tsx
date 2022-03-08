@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import colors from "../../../values/colors";
-import CustomSide from "../../../components/CustomSide";
+import CustomSide from "../../side/CustomSide";
 import CustomButton from "../../../components/CustomButton";
 import {
   filterOrderChanged,
